@@ -81,9 +81,6 @@
     <ClInclude Include="DOSHeader.h">
       <Filter>PEFile\PE64\DOSHeader</Filter>
     </ClInclude>
-    <ClInclude Include="PETypes.h">
-      <Filter>PEFile\PE64</Filter>
-    </ClInclude>
     <ClInclude Include="RichHeader.h">
       <Filter>PEFile\PE64\RichHeader</Filter>
     </ClInclude>
@@ -98,6 +95,9 @@
     </ClInclude>
     <ClInclude Include="BaseReloc.h">
       <Filter>PEFile\PE64\BaseReloc</Filter>
+    </ClInclude>
+    <ClInclude Include="PETypes.h">
+      <Filter>PEFile</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
