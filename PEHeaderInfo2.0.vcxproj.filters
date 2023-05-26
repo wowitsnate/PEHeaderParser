@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Logger">
+      <UniqueIdentifier>{e0813f67-4a5d-4102-92d2-d5ba6884dfc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{58a08d23-a2d9-407a-b514-944e32b8f7fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PEFile">
+      <UniqueIdentifier>{2a6be58c-c10a-4c9d-b2d8-088d597d32b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PEFile\PE64">
+      <UniqueIdentifier>{89b62490-d599-4bed-957b-6a1d05c56526}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PEFile\PE64\DOSHeader">
+      <UniqueIdentifier>{8a038a78-e8f3-43c4-9073-9d277cba327b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PEFile\PE64\RichHeader">
+      <UniqueIdentifier>{cf05418e-a81e-40b8-b144-2a6fe99f2604}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PEFile\PE64\NTHeaders">
+      <UniqueIdentifier>{bc7a27e9-6445-43c8-97bf-897871100b25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PEFile\PE64\SectionHeaders">
+      <UniqueIdentifier>{de378dea-c3e3-4835-869a-e0bab6e36408}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PEFile\PE64\ImportDirectory">
+      <UniqueIdentifier>{053ca4cb-ce20-4238-aded-ecb835df2719}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PEFile\PE64\BaseReloc">
+      <UniqueIdentifier>{1ea824bf-079b-4b36-b536-35cf24359519}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PEHeaderInfo2.0.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="PE64.cpp">
+      <Filter>PEFile\PE64</Filter>
+    </ClCompile>
+    <ClCompile Include="DOSHeader.cpp">
+      <Filter>PEFile\PE64\DOSHeader</Filter>
+    </ClCompile>
+    <ClCompile Include="RichHeader.cpp">
+      <Filter>PEFile\PE64\RichHeader</Filter>
+    </ClCompile>
+    <ClCompile Include="NTHeaders.cpp">
+      <Filter>PEFile\PE64\NTHeaders</Filter>
+    </ClCompile>
+    <ClCompile Include="SectionHeaders.cpp">
+      <Filter>PEFile\PE64\SectionHeaders</Filter>
+    </ClCompile>
+    <ClCompile Include="ImportDirectory.cpp">
+      <Filter>PEFile\PE64\ImportDirectory</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseReloc.cpp">
+      <Filter>PEFile\PE64\BaseReloc</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="includes.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="MathFunc.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="PE64.h">
+      <Filter>PEFile\PE64</Filter>
+    </ClInclude>
+    <ClInclude Include="DOSHeader.h">
+      <Filter>PEFile\PE64\DOSHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="PETypes.h">
+      <Filter>PEFile\PE64</Filter>
+    </ClInclude>
+    <ClInclude Include="RichHeader.h">
+      <Filter>PEFile\PE64\RichHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="NTHeaders.h">
+      <Filter>PEFile\PE64\NTHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="SectionHeaders.h">
+      <Filter>PEFile\PE64\SectionHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="ImportDirectory.h">
+      <Filter>PEFile\PE64\ImportDirectory</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseReloc.h">
+      <Filter>PEFile\PE64\BaseReloc</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
