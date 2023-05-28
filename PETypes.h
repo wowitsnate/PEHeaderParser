@@ -30,3 +30,38 @@ typedef unsigned __int64 ULONGLONG;
 
 #define ___IMAGE_SIZEOF_SHORT_NAME              8
 #define ___IMAGE_SIZEOF_SECTION_HEADER          40
+
+class ImageFileHeader {
+public:
+    WORD    Machine;
+    WORD    NumberOfSections;
+    DWORD   TimeDateStamp;
+    DWORD   PointerToSymbolTable;
+    DWORD   NumberOfSymbols;
+    WORD    SizeOfOptionalHeader;
+    WORD    Characteristics;
+};
+
+class ImageDataDirectory {
+public:
+    DWORD   VirtualAddress;
+    DWORD   Size;
+};
+
+class ImageImportByName {
+public:
+    WORD    Hint;
+    char   Name[100];
+};
+
+class ImageImportDescriptor {
+public:
+    union {
+        DWORD   Characteristics;
+        DWORD   OriginalFirstThunk;
+    } DUMMYUNIONNAME;
+    DWORD   TimeDateStamp;
+    DWORD   ForwarderChain;
+    DWORD   Name;
+    DWORD   FirstThunk;
+};

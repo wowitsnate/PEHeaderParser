@@ -1,12 +1,6 @@
 #pragma once
 
-class ImageDataDirectory {
-public:
-    DWORD   VirtualAddress;
-    DWORD   Size;
-};
-
-class ImageOptionalHeader {
+class ImageOptionalHeader64 {
 public:
     WORD        Magic;
     BYTE        MajorLinkerVersion;
@@ -40,23 +34,13 @@ public:
     ImageDataDirectory DataDirectory[___IMAGE_NUMBEROF_DIRECTORY_ENTRIES];
 };
 
-class ImageFileHeader {
-public:
-    WORD    Machine;
-    WORD    NumberOfSections;
-    DWORD   TimeDateStamp;
-    DWORD   PointerToSymbolTable;
-    DWORD   NumberOfSymbols;
-    WORD    SizeOfOptionalHeader;
-    WORD    Characteristics;
-};
 
-class NTHeaders {
+class NTHeaders64 {
 public:
-    NTHeaders(FILE* PEFile, DOSHeader* _DOSHeader);
+    NTHeaders64(FILE* PEFile, DOSHeader* _DOSHeader);
     void PrintNTHeadersInfo();
 public:
     DWORD Signature;
     ImageFileHeader FileHeader;
-    ImageOptionalHeader OptionalHeader;
+    ImageOptionalHeader64 OptionalHeader;
 };

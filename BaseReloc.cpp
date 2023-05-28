@@ -17,7 +17,29 @@ DWORD BaseReloc::resolve(DWORD VA, ImageSectionHeader Section) {
 }
 
 
-BaseReloc::BaseReloc(FILE* PEFile, NTHeaders* _NTHeaders, SectionHeaders* _SectionHeaders) {
+BaseReloc::BaseReloc(FILE* PEFile, NTHeaders64* _NTHeaders, SectionHeaders* _SectionHeaders) {
+	SectionHeadersVec = &_SectionHeaders->SectionHeadersVec;
+
+	ImageDataDirectory BaseRelocDirectoryFromNT = _NTHeaders->OptionalHeader.DataDirectory[___IMAGE_DIRECTORY_ENTRY_BASERELOC];
+	BaseRelocDirectoryAddress = resolve(BaseRelocDirectoryFromNT.VirtualAddress, locate(BaseRelocDirectoryFromNT.VirtualAddress));
+	int BaseRelocSizeCounter = 0;
+	for (int BaseRelocDirectoryCount = 0; ; BaseRelocDirectoryCount++) {
+		ImageBaseRelocation TmpImageBaseRelocation{ };
+
+		int offset = (BaseRelocSizeCounter + BaseRelocDirectoryAddress);
+
+		fseek(PEFile, offset, SEEK_SET);
+		fread(&TmpImageBaseRelocation, sizeof(ImageBaseRelocation), 1, PEFile);
+
+		if (TmpImageBaseRelocation.VirtualAddress == 0x00000000 &&
+			TmpImageBaseRelocation.SizeOfBlock == 0x00000000) break;
+
+		BaseRelocSizeCounter += TmpImageBaseRelocation.SizeOfBlock;
+		ImageBaseRelocationVec.push_back(TmpImageBaseRelocation);
+	}
+}
+
+BaseReloc::BaseReloc(FILE* PEFile, NTHeaders32* _NTHeaders, SectionHeaders* _SectionHeaders) {
 	SectionHeadersVec = &_SectionHeaders->SectionHeadersVec;
 
 	ImageDataDirectory BaseRelocDirectoryFromNT = _NTHeaders->OptionalHeader.DataDirectory[___IMAGE_DIRECTORY_ENTRY_BASERELOC];

@@ -1,11 +1,11 @@
 #include "includes.h"
 
-NTHeaders::NTHeaders(FILE* PEFile, DOSHeader* _DOSHeader) {
+NTHeaders64::NTHeaders64(FILE* PEFile, DOSHeader* _DOSHeader) {
 	fseek(PEFile, _DOSHeader->e_lfanew, SEEK_SET);
-	fread(this, sizeof(NTHeaders), 1, PEFile);
+	fread(this, sizeof(NTHeaders64), 1, PEFile);
 }
 
-void NTHeaders::PrintNTHeadersInfo() {
+void NTHeaders64::PrintNTHeadersInfo() {
 	printf("\n NT HEADERS:\n");
 	printf(" -----------\n\n");
 

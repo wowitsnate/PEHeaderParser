@@ -14,7 +14,8 @@ public:
 
 class BaseReloc {
 public:
-	BaseReloc(FILE* PEFile, NTHeaders* _NTHeaders, SectionHeaders* _SectionHeaders);
+	BaseReloc(FILE* PEFile, NTHeaders64* _NTHeaders, SectionHeaders* _SectionHeaders);
+	BaseReloc(FILE* PEFile, NTHeaders32* _NTHeaders, SectionHeaders* _SectionHeaders);
 	void PrintBaseRelocInfo(FILE* PEFile);
 public:
 	std::vector<ImageBaseRelocation> ImageBaseRelocationVec = {};

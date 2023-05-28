@@ -19,7 +19,8 @@ public:
 
 class SectionHeaders {
 public:
-    SectionHeaders(FILE* PEFile, DOSHeader* _DOSHeader, NTHeaders* _NTHeaders);
+    SectionHeaders(FILE* PEFile, DOSHeader* _DOSHeader, NTHeaders64* _NTHeaders);
+    SectionHeaders(FILE* PEFile, DOSHeader* _DOSHeader, NTHeaders32* _NTHeaders);
     void PrintSectionHeadersInfo();
 public:
     std::vector<ImageSectionHeader> SectionHeadersVec = {};

@@ -1,11 +1,5 @@
 #pragma once
 
-class ImageImportByName {
-public:
-    WORD    Hint;
-    char   Name[100];
-};
-
 class ILTEntry64 {
 public:
     union {
@@ -15,21 +9,10 @@ public:
     DWORD ORDINAL_NAME_FLAG : 1;
 };
 
-class ImageImportDescriptor {
-public:
-    union {
-        DWORD   Characteristics;
-        DWORD   OriginalFirstThunk;
-    } DUMMYUNIONNAME;
-    DWORD   TimeDateStamp;
-    DWORD   ForwarderChain;
-    DWORD   Name;
-    DWORD   FirstThunk;
-};
 
-class ImportDirectory {
+class ImportDirectory64 {
 public:
-	ImportDirectory(FILE* PEFile, NTHeaders* _NTHeaders, SectionHeaders* _SectionHeaders);
+	ImportDirectory64(FILE* PEFile, NTHeaders64* _NTHeaders, SectionHeaders* _SectionHeaders);
 	void PrintImportDirectoryInfo(FILE* PEFile);
 public:
     std::vector<ImageImportDescriptor> ImageImportDescriptorVec = {};

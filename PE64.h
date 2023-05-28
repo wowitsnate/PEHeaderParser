@@ -1,8 +1,6 @@
 #pragma once
 
 class PE64 {
-	friend DOSHeader;
-	friend RichHeader;
 public:
 	PE64(FILE* _PEFile, const char* _Name);
 	void PrintInfo();
@@ -12,11 +10,10 @@ public:
 public:
 	DOSHeader*			m_DOSHeader =		nullptr;
 	RichHeader*			m_RichHeader =		nullptr;
-	NTHeaders*			m_NTHeaders =		nullptr;
+	NTHeaders64*			m_NTHeaders =		nullptr;
 	SectionHeaders*		m_SectionHeaders =	nullptr;
-	ImportDirectory*	m_ImportDirectory = nullptr;
+	ImportDirectory64*	m_ImportDirectory = nullptr;
 	BaseReloc*			m_BaseReloc =		nullptr;
 public:
 	void ParseFile();
-
 };

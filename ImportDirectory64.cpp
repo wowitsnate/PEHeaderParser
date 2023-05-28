@@ -1,6 +1,6 @@
 #include "includes.h"
 
-ImageSectionHeader ImportDirectory::locate(DWORD VA) {
+ImageSectionHeader ImportDirectory64::locate(DWORD VA) {
 	for (ImageSectionHeader CurSectionHeader : *SectionHeadersVec) {
 		if (isInRangeExclusiveUpper(VA,
 									CurSectionHeader.VirtualAddress,
@@ -11,11 +11,11 @@ ImageSectionHeader ImportDirectory::locate(DWORD VA) {
 	return ImageSectionHeader();
 }
 
-DWORD ImportDirectory::resolve(DWORD VA, ImageSectionHeader Section) {
+DWORD ImportDirectory64::resolve(DWORD VA, ImageSectionHeader Section) {
 	return ((VA - Section.VirtualAddress) + Section.PointerToRawData);
 }
 
-ImportDirectory::ImportDirectory(FILE* PEFile, NTHeaders* _NTHeaders, SectionHeaders* _SectionHeaders) {
+ImportDirectory64::ImportDirectory64(FILE* PEFile, NTHeaders64* _NTHeaders, SectionHeaders* _SectionHeaders) {
 	SectionHeadersVec = &_SectionHeaders->SectionHeadersVec;
 
 	ImageDataDirectory ImportDirectoryFromNT = _NTHeaders->OptionalHeader.DataDirectory[___IMAGE_DIRECTORY_ENTRY_IMPORT];
@@ -38,7 +38,7 @@ ImportDirectory::ImportDirectory(FILE* PEFile, NTHeaders* _NTHeaders, SectionHea
 	}
 }
 
-void ImportDirectory::PrintImportDirectoryInfo(FILE* PEFile) {
+void ImportDirectory64::PrintImportDirectoryInfo(FILE* PEFile) {
 
 	printf(" IMPORT TABLE:\n");
 	printf(" ----------------\n\n");

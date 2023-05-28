@@ -23,17 +23,26 @@
     <Filter Include="PEFile\PE64\RichHeader">
       <UniqueIdentifier>{cf05418e-a81e-40b8-b144-2a6fe99f2604}</UniqueIdentifier>
     </Filter>
-    <Filter Include="PEFile\PE64\NTHeaders">
-      <UniqueIdentifier>{bc7a27e9-6445-43c8-97bf-897871100b25}</UniqueIdentifier>
-    </Filter>
     <Filter Include="PEFile\PE64\SectionHeaders">
       <UniqueIdentifier>{de378dea-c3e3-4835-869a-e0bab6e36408}</UniqueIdentifier>
     </Filter>
-    <Filter Include="PEFile\PE64\ImportDirectory">
-      <UniqueIdentifier>{053ca4cb-ce20-4238-aded-ecb835df2719}</UniqueIdentifier>
-    </Filter>
     <Filter Include="PEFile\PE64\BaseReloc">
       <UniqueIdentifier>{1ea824bf-079b-4b36-b536-35cf24359519}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PEFile\PE32">
+      <UniqueIdentifier>{87b4fd48-5ed8-49e7-aea6-3b2eb57d07e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PEFile\PE64\NTHeaders64">
+      <UniqueIdentifier>{bc7a27e9-6445-43c8-97bf-897871100b25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PEFile\PE32\NTHeaders32">
+      <UniqueIdentifier>{5bcfa780-81ac-4b3c-a0d9-cdec9524d7e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PEFile\PE32\ImportDirectory32">
+      <UniqueIdentifier>{e10fd386-b4fe-431f-aaa5-0602f4b944a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PEFile\PE64\ImportDirectory64">
+      <UniqueIdentifier>{053ca4cb-ce20-4238-aded-ecb835df2719}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -52,17 +61,26 @@
     <ClCompile Include="RichHeader.cpp">
       <Filter>PEFile\PE64\RichHeader</Filter>
     </ClCompile>
-    <ClCompile Include="NTHeaders.cpp">
-      <Filter>PEFile\PE64\NTHeaders</Filter>
+    <ClCompile Include="NTHeaders64.cpp">
+      <Filter>PEFile\PE64\NTHeaders64</Filter>
     </ClCompile>
     <ClCompile Include="SectionHeaders.cpp">
       <Filter>PEFile\PE64\SectionHeaders</Filter>
     </ClCompile>
-    <ClCompile Include="ImportDirectory.cpp">
-      <Filter>PEFile\PE64\ImportDirectory</Filter>
+    <ClCompile Include="ImportDirectory64.cpp">
+      <Filter>PEFile\PE64\ImportDirectory64</Filter>
     </ClCompile>
     <ClCompile Include="BaseReloc.cpp">
       <Filter>PEFile\PE64\BaseReloc</Filter>
+    </ClCompile>
+    <ClCompile Include="PE32.cpp">
+      <Filter>PEFile\PE32</Filter>
+    </ClCompile>
+    <ClCompile Include="NTHeaders32.cpp">
+      <Filter>PEFile\PE32\NTHeaders32</Filter>
+    </ClCompile>
+    <ClCompile Include="ImportDirectory32.cpp">
+      <Filter>PEFile\PE32\ImportDirectory32</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -84,20 +102,29 @@
     <ClInclude Include="RichHeader.h">
       <Filter>PEFile\PE64\RichHeader</Filter>
     </ClInclude>
-    <ClInclude Include="NTHeaders.h">
-      <Filter>PEFile\PE64\NTHeaders</Filter>
+    <ClInclude Include="NTHeaders64.h">
+      <Filter>PEFile\PE64\NTHeaders64</Filter>
     </ClInclude>
     <ClInclude Include="SectionHeaders.h">
       <Filter>PEFile\PE64\SectionHeaders</Filter>
     </ClInclude>
-    <ClInclude Include="ImportDirectory.h">
-      <Filter>PEFile\PE64\ImportDirectory</Filter>
+    <ClInclude Include="ImportDirectory64.h">
+      <Filter>PEFile\PE64\ImportDirectory64</Filter>
     </ClInclude>
     <ClInclude Include="BaseReloc.h">
       <Filter>PEFile\PE64\BaseReloc</Filter>
     </ClInclude>
     <ClInclude Include="PETypes.h">
       <Filter>PEFile</Filter>
+    </ClInclude>
+    <ClInclude Include="PE32.h">
+      <Filter>PEFile\PE32</Filter>
+    </ClInclude>
+    <ClInclude Include="NTHeaders32.h">
+      <Filter>PEFile\PE32\NTHeaders32</Filter>
+    </ClInclude>
+    <ClInclude Include="ImportDirectory32.h">
+      <Filter>PEFile\PE32\ImportDirectory32</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

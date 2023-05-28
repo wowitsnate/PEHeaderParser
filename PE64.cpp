@@ -31,8 +31,8 @@ void PE64::PrintInfo() {
 void PE64::ParseFile() {
 	m_DOSHeader = new DOSHeader(PEFile);
 	m_RichHeader = new RichHeader(PEFile, m_DOSHeader);
-	m_NTHeaders = new NTHeaders(PEFile, m_DOSHeader);
+	m_NTHeaders = new NTHeaders64(PEFile, m_DOSHeader);
 	m_SectionHeaders = new SectionHeaders(PEFile, m_DOSHeader, m_NTHeaders);
-	m_ImportDirectory = new ImportDirectory(PEFile, m_NTHeaders, m_SectionHeaders);
+	m_ImportDirectory = new ImportDirectory64(PEFile, m_NTHeaders, m_SectionHeaders);
 	m_BaseReloc = new BaseReloc(PEFile, m_NTHeaders, m_SectionHeaders);
 }

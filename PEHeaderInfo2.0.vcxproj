@@ -133,9 +133,12 @@
   <ItemGroup>
     <ClCompile Include="BaseReloc.cpp" />
     <ClCompile Include="DOSHeader.cpp" />
-    <ClCompile Include="ImportDirectory.cpp" />
+    <ClCompile Include="ImportDirectory64.cpp" />
+    <ClCompile Include="ImportDirectory32.cpp" />
     <ClCompile Include="Logger.cpp" />
-    <ClCompile Include="NTHeaders.cpp" />
+    <ClCompile Include="NTHeaders32.cpp" />
+    <ClCompile Include="NTHeaders64.cpp" />
+    <ClCompile Include="PE32.cpp" />
     <ClCompile Include="PE64.cpp" />
     <ClCompile Include="PEHeaderInfo2.0.cpp" />
     <ClCompile Include="RichHeader.cpp" />
@@ -144,11 +147,14 @@
   <ItemGroup>
     <ClInclude Include="BaseReloc.h" />
     <ClInclude Include="DOSHeader.h" />
-    <ClInclude Include="ImportDirectory.h" />
+    <ClInclude Include="ImportDirectory64.h" />
+    <ClInclude Include="ImportDirectory32.h" />
     <ClInclude Include="includes.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="MathFunc.h" />
-    <ClInclude Include="NTHeaders.h" />
+    <ClInclude Include="NTHeaders32.h" />
+    <ClInclude Include="NTHeaders64.h" />
+    <ClInclude Include="PE32.h" />
     <ClInclude Include="PE64.h" />
     <ClInclude Include="PETypes.h" />
     <ClInclude Include="RichHeader.h" />

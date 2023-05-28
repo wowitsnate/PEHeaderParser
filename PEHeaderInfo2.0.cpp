@@ -2,16 +2,17 @@
 
 int main()
 {
-    std::string FileLocation;
-    std::cout << "Enter PE File Location: \n";
-    std::cin >> FileLocation;
+    std::string FileLocation = "C:\\Users\\nate\\Desktop\\Debug_Testing_Output\\ProjectUtilsTesting32bit.exe";
+    //std::cout << "Enter PE File Location: \n";
+    //std::cin >> FileLocation;
 
     FILE* PpeFile;
     fopen_s(&PpeFile, FileLocation.c_str(), "r");
 
-    PE64 test = PE64(PpeFile, "PE_FILE");
+    PE32 test = PE32(PpeFile, "PE_FILE");
     test.PrintInfo();
 
-    fclose(PpeFile);
-
+    if (PpeFile) {
+       fclose(PpeFile);
+    }
 }
